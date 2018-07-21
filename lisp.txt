@@ -1,0 +1,99 @@
+(defun convert(celcius)
+             (+ (* (/ 9 5 ) celcius) 32)
+)
+____________________________
+
+(defun sign(num)
+	(cond	((= num 0) 'Zero)
+			( (< num 0) 'Negative)
+			( 'Positive)
+	))
+____________________________
+
+(defun find-factorial(n)
+	(cond
+			((> n 1) (* n (find-factorial((- n 1))))
+
+			((= n 1) 1)
+	))
+____________________________
+
+( defun find-fibonacci(n)
+	
+	(cond ((> n 2) (+ (find-fibonacci((- n 1))) ((find-fibonacci((- n 2)))))) 
+			((equal 1 n) 1)
+			((equal 2 n) 1)
+	)
+)
+____________________________
+
+(defun add-up (a)
+"adds the numbers in the list a "
+
+	(cond 
+			((null a) 0)
+			(t (+ (car a) (add-up (cdr a))))
+	))
+____________________________
+
+(defun find-length(a)
+"THis will return the length of the list"
+	(cond 
+			((null a) 0)
+			(t (+ 1 (find-length (cdr a))))
+	))
+____________________________
+(reduce '+ '(1 2 3 4 5))
+____________________________
+
+(defun where-is(n)
+"This fuction returns the place where the country lies, this is comment"
+	(cond 
+			((equal n 'pokhara) 'nepal)
+			((equal n 'lamachaur) 'nepal)
+			(t unknown)
+	)
+)
+
+___________________________________
+(defun my-fib (num)
+    (cond (> n 2) (+ (my-fib (- n 1) (my-fib (- n 2))))
+        ((equal n 1) 1)
+        ((equal n 2) 2)
+    )
+)
+_______________________________________
+(defun add-up (a)
+    (cond
+        ((null a ) 0)
+        (t (+ (car a) (add-up (cdr a))))
+    )
+)
+____________________________
+(defun squared (n)
+    (* n n)
+ )
+
+(mapcar 'squared '(1 2 3 4))
+_______________________________
+(mapcar (lambda (n) (+ n 1)) '(1 2 3) )
+ _______________________________
+
+(mapcar (lambda (n) (if (equal n 'up) 'up 'down )) '(up down down up))
+
+(find-if 'oddp '(1 2 3 4 5 ))
+
+(defun near(n)
+    (if (and (> n 7) (< n 13)) t nil
+))
+
+(find-if near '(1 2 11 9 12))
+
+_______________________________________
+
+(defun checkzero(n)
+	(if (= n 0) t nil)
+
+)
+(remove-if 'checkzero '(1 2 3  0 0 0 5 6 8)) (length (remove-if 'checkzero '(1 2 3  0 0 0 5 6 8)))
+_________________________________________
